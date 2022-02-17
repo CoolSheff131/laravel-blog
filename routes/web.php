@@ -22,6 +22,9 @@ Route::group(['namespaсe' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Admin\Main'], function () {
         Route::get('/', 'IndexController');
     });
+    Route::group(['namespace' => 'Admin\Category', 'prefix' => 'categories'], function () {
+        Route::get('/', 'IndexController');
+    });
 });
 
 Auth::routes();
