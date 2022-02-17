@@ -44,7 +44,7 @@
                                     @foreach($users as $user)
                                     <tr>
                                         <th>{{ $user->id }}</th>
-                                        <th>{{ $user->title }}</th>
+                                        <th>{{ $user->name }}</th>
                                         <th><a href="{{ route('admin.user.show', $user->id)}}"><i class="far fa-eye"></i></a></th>
                                         <th><a href="{{ route('admin.user.edit', $user->id)}}"><i class="fas fa-pencil-alt"></i></a></th>
                                         <th>
