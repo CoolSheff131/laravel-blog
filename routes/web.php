@@ -18,6 +18,18 @@ Route::group(['namespace' => 'Main'], function () {
 });
 
 
+Route::group(['namespaсe' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
+    Route::group(['namespace' => 'Personal\Main', 'prefix' => 'liked'], function () {
+        Route::get('/', 'IndexController')->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Personal\Liked', 'prefix' => 'liked'], function () {
+        Route::get('/', 'IndexController')->name('personal.liked.index');
+    });
+    Route::group(['namespace' => 'Personal\Comment', 'prefix' => 'comments'], function () {
+        Route::get('/', 'IndexController')->name('personal.comment.index');
+    });
+});
+
 Route::group(['namespaсe' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']], function () {
     Route::group(['namespace' => 'Admin\Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
